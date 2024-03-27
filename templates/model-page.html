@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include "model-header.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Título da Página{% endblock %}</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+
+        /* Estilos para o cabeçalho */
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para o conteúdo principal */
+        .content {
+            padding: 20px;
+        }
+
+        /* Estilos para o rodapé */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    {% block content  %} {% endblock %}
-    {% include "model-footer.html" %}
-</body>
-</html>
+    <header class="header">
+        {% include "model-header.html" %}
+    </header>
+
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
